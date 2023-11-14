@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenscape: Mapping Air Quality</title>
+    <style>
+        @font-face {
+            font-family: 'Flixsolid';
+            src: url(Fonts/TTF/Flix-Normal.ttf);
+        }
+@font-face {
+    font-family: 'Flix';
+    src: url(Fonts/TTF/Flix-Outline.ttf);
+}
+
+    h1 
+    {
+        
+        
+  padding: 120px;
+  text-align: left;
+  
+  border:black;
+  border-style: double;
+  font-size: 120px;
+  font-family: system-ui, ;
+  color: black;
+  text-transform: uppercase;
+  
+ 
+ 
+}
+.background{
+    background-image: url(greenimage.jpg);
+  
+  
+  
+  min-height: 500px;
+
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+ul{
+    
+ list-style-type: '◈';
+}
+.first {
+    font-family: Flix;
+}
+.second {
+    font-family: flixsolid;
+    font-size:90px;
+    font-weight: lighter;
+    
+}
+
+
+article{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+  h2 { text-align: left;
+    padding: 0;
+    font-size: 60px;
+    font-family: fantasy;
+    -webkit-text-stroke: 0.2px whitesmoke;
+
+}
+.table{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+p{
+    font-size: 25px;
+}
+.image1{
+    width: 43%;
+    height: 43%;
+    padding-top:15px;
+    padding-bottom:10px;
+   
+   
+}
+.image2{
+    width: 43%;
+    height: 43%;
+    padding-top:15px;
+    padding-bottom:10px;
+    padding-left:180px;
+    
+    
+
+}
+
+
+
+ section{ 
+    font-size: 20px;
+ }
+
+ 
+ 
+
+
+ 
+footer {
+    padding-top: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 10px;
+    text-align: center;
+
+}
+h4{
+    font-style: italic;
+
+}
+
+    
+
+
+
+
+
+    .table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    
+    font-size:18px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+div {
+    border:black;
+    border-style: outset;
+}
+
+
+body {
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
+  background-color: mediumspringgreen;
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+
+}
+.topnav {
+  background-color: lightseagreen;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: mintcream;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color:rgba(63, 187, 96, 0.2);
+  color : black;
+}
+
+      
+      </style>
+      <script>
+        function showHome() {
+            // Replace this with the actual content you want to display for the Home button
+            document.getElementById("content").innerHTML = "<p></p>";
+        }
+
+        function openNews() {
+            // Replace the link with the actual link you want to open for the News button
+            window.open("https://www.aqi.in/", "API");
+        }
+
+        function showAbout(){
+        console.log("About button clicked");
+         
+            // Replace this with the actual content you want to display for the About button
+            document.getElementById("content").innerHTML = "<p>This webpage is a project work for CHE-110 (Environmental Studies). The project is about Mapping the air quality. Live Air Quality can not be mapped by a mere website it requires a software called API(Application programming interface) . So this website is about the concept of Air quality Mapping ,  why is it important? , and what we can do tto improve it . The table provided in the website shows the air quality of different states. The data in the table differs from the real time air quality because the quality of air changes every few minutes . If you want to check the real time data then click on the 'News' button. You will reach a software using API which will ask for your location access and show the Air Quality Index accordingly.</p>";
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="javascript:void(0);" onclick="showHome();">Home</a>
+        <a href="javascript:void(0);" onclick="openNews();">News</a>
+        <a href="javascript:void(0);" onclick="showAbout();">About</a>
+    </div>
+    <div id="content"></div>
+      
+
+    <header>
+       
+        <h1 class="background">
+            <span class="first">Greenscape</span>
+            <span class="second">Mapping the air quality for sustainable living</span>
+        </h1>
+        <!-- Add any additional header content here -->
+    </header>
+    
+
+    <section>
+        <article>
+            <h2>Introduction</h2>
+            <p>Air pollution has critical impacts on our health and the state of our environment, and it is responsible for significant economic consequences due to these harms. Thus, working towards cleaner air through effective air quality monitoring and management is an essential part of building a healthier and more sustainable future. We break down types of air quality monitoring networks, various technologies that exist, the negative health and environmental impacts of poor air quality,
+and the regulatory framework that exists for reducing pollution exposure.<br>
+        <img src="airpollution.jpg" alt="airpollution" class="image1"><img src="image2.jpg" alt="image" class="image2"></p>
+        </article>
+
+
+        <article>
+            <h2>What is air quality monitoring and why is it important?</h2>
+            <p>Air quality monitoring refers to the collection and measurement of ambient air pollution samples. The data from these samples is compared to clean air standards and historical information regarding air quality levels, along with data reflecting its health and environmental impacts,
+                 to determine the state of the air.Air quality is measured at a variety of levels — including federal, state, regional, and local levels. Air quality can change greatly between relatively close geographic locations, making it important to have a dense air pollution measurement network that reports air quality at both
+                  a regional and smaller scale.Poor air quality has a multitude of negative effects, making it highly important to monitor air quality and understand exposure levels. 
+
+                  Air quality has also been recognized for its intricate relationship with climate change, including the ways that addressing some sources that contribute to air pollution may also help in mitigating climate change.
+                  <ul>
+                    <h3>Objectives for mapping air quality</h3>
+                   <li> Characterize the nature and severity of air pollution in the state</li>
+
+<li>Measure air quality against the Ambient Air Quality Standards and determine attainment status</li>
+<li>Identify trends in pollutant concentrations</li>
+<li>Provide regularly updated air quality information</li>
+<li>Determine levels of community exposure to harmful pollutants</li>
+
+                    </ul>
+                </p>
+        </article>
+        <h2 class="table">&rarr;Air quality of different states</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Air Quality Index (AQI)</th>
+                </tr>
+                        <tbody>
+                <tr>
+                    <td>Andhra Pradesh</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>Assam</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>Bihar</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>Delhi</td>
+                    <td>205</td>
+                </tr>
+                <tr>
+                    <td>Gujarat</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>Haryana</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>Karnataka</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>Kerala</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Jammu & Kashmir</td>
+                    <td>36</td>
+                    
+                </tr>
+                <tr>
+                    <td>Maharashtra</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Odisha</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td>Punjab</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>Rajasthan</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Tamil Nadu</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>Uttar Pradesh</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>West Bengal</td>
+                    <td>75</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>*The data provided above is from few days ago.It may vary from real time data.</h4>
+        <br>
+    
+        
+<h2>How we can improve air quality?</h2>
+     <p>
+        <h3>1. Reduce Your Contribution</h3>
+        Manage waste - Minimize emissions from your waste–compost food and garden items, recycle non-organic trash if available, reuse grocery bags and dispose of remaining trash by local collection. Never burn trash as this contributes directly to air pollution.
+        Cook and heat clean - Burning coal and biomass (e.g. wood) contributes to household air pollution when used for cooking and outdoor air pollution when used for heating. Check efficiency ratings for home heating systems and cookstoves to use models that save money and protect health.
+        Move mindfully - Use public transportation, cycling or walking to get around. Consider low or no emission vehicles if a car is necessary. Diesel vehicles, particularly older ones, are large contributors of black carbon which are carcinogenic for health and damaging to our climate.
+        Conserve energy - Turn off lights and electronics not in use. Use LED bulbs, if available, as a non-toxic alternative to CFLs, which contain mercury. Rooftop thermal solar systems may be an option for many to generate hot water affordably and photovoltaic systems can be a clean and healthy source of power.
+        Call for change - Call on local leaders to adopt national air quality standards that meet WHO guidelines. Support policies that strengthen emissions standards and provide incentives for purchase of cleaner vehicles, low-energy appliances and energy-efficient housing.
+        <h3>2. Minimize your exposure</h3>
+        Monitor your air - Check local air pollution levels each day and be aware of guidance from city or national authorities, to determine whether to limit outdoor activity or avoid hotspots where air pollution levels may be elevated.
+        Time outdoor activity - Shift regular outdoor activity away from times when air pollution levels are highest. In many cities, pollution peaks at late morning and early evening during rush hour traffic.
+        Know your surroundings - There is considerable evidence that children and adults living, or spending considerable time near busy highways may be more vulnerable to certain air pollution-related ailments. 
+        Avoid heavy traffic - Avoid driving during peak times and keep windows closed while in traffic, as some research suggests that nearby exhaust can increase air pollution levels inside your car.
+        Assess your risk - Determine with your doctor if any existing conditions make you more susceptible to air pollution so you can more effectively balance the risks and benefits of future exposure.
+        Use effective protection - If a face mask is advised where you live, consult with credible sources to be sure it has a strong enough filter. Many face masks do not filter fine particulate matter (PM2.5 and under) which is among the most harmful.</p>   <!-- Add more articles as needed -->
+
+    </section>
+
+    <aside>
+        <!-- Add any relevant sidebar content or links -->
+    </aside>
+
+    <footer>
+        
+        <p>&copy;Team project made by Hameem Baba, Wanshika Gautam, Praveen Sharma .</p>
+        <!-- Add any additional footer content or links -->
+    </footer>
+
+    <!-- Add your JavaScript links or scripts here -->
+
+</body>
+</html>
